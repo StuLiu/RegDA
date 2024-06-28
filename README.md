@@ -10,6 +10,7 @@ Puhong Duan, Zhuojun Xie, Xudong Kang, and Shutao Li</h5>
 <h5 align="left">This is the official implementation for 
 <a href="https://scholar.google.com/citations?user=LXlWdyQAAAAJ&hl=zh-CN">RegDA</a>. 
 There are some differences comparing with the published paper.</h5>
+
 - The denoising approach in this repository is re-weighting, while in the paper is voting;
 - A class-frequency threshold is utilized to guild the pseudo label homogenizing. 
 For each local region, if the class with larger frequency than this threshold, 
