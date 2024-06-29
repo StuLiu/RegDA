@@ -12,8 +12,8 @@ Puhong Duan, Zhuojun Xie, Xudong Kang, and Shutao Li</h5>
 There are some differences comparing with the published paper.</h5>
 
 - The denoising approach in this repository is re-weighting, while in the paper is voting;
-- A class-frequency threshold is utilized to guild the pseudo label homogenizing. 
-For each local region, if the class with larger frequency than this threshold, 
+- A class-frequency threshold is utilized to guide the pseudo-label homogenizing. 
+For each local region, if the class with a larger frequency than this threshold, 
 it will be employed for homogenizing;
 - The LRH is also utilized in the aligning stage.
 
@@ -37,14 +37,14 @@ it will be employed for homogenizing;
 
 #### 1. Generate from raw:
 
-- Download the raw datasets from <a href="https://www.isprs.org/education/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx">here</a>.
+- Download the raw datasets <a href="https://www.isprs.org/education/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx">here</a>.
 - Run the preprocess script in ./convert_datasets/ to crop train, val, test sets:\
 `python convert_datasets/convert_potsdam.py`\
 `python convert_datasets/convert_vaihingen.py`
-- Generate local regions by run \
+- Generate local regions by running \
 `python tools/seg_everything.py`
-#### 2. Alternately, you can also download the processed data
-- Download the processed datasets from <a href="https://pan.baidu.com/s/1rWHSgRpSVPlLt5_bykHCOg?pwd=6th5">here</a>.
+#### 2. Alternatively, you can also download the processed data
+- Download the processed datasets <a href="https://pan.baidu.com/s/1rWHSgRpSVPlLt5_bykHCOg?pwd=6th5">here</a>.
 - reorganize the directory tree.
 #### 3. The prepared data is formatted as follows:
 "\
