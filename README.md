@@ -1,8 +1,13 @@
 <h2 align="center">Learn from Segment Anything Model: Local Region Homogenizing for Cross-domain 
 Remote Sensing Image Segmentation</h2>
 
-<h5 align="center">by <a href="https://scholar.google.com/citations?user=LXlWdyQAAAAJ&hl=zh-CN">Wang Liu</a>, 
-Puhong Duan, Zhuojun Xie, Xudong Kang, and Shutao Li</h5>
+<h5 align="center">
+  by <a href="https://scholar.google.com/citations?user=LXlWdyQAAAAJ&hl=zh-CN">Wang Liu</a>,
+  <a href="https://scholar.google.com/citations?hl=zh-CN&user=IYUlx_8AAAAJ">Puhong Duan</a>, 
+  <a href="https://www.researchgate.net/profile/Zhuojun-Xie-6">Zhuojun Xie</a>, 
+  <a href="https://scholar.google.com/citations?hl=zh-CN&user=5XOeLZYAAAAJ">Xudong Kang</a>, 
+  <a href="https://scholar.google.com/citations?user=PlBq8n8AAAAJ&hl=zh-CN">Shutao Li</a>
+</h5>
 
 
 ---------------------
@@ -78,4 +83,15 @@ bash runs/regda/run_2vaihingen.sh
 ### Inference single file
 ```bash 
 python tools/infer_single.py st.regda.2potsdam log/regda/ssl/Potsdam_best.pth [image-path] --save-dir [save-dir-path]
+```
+
+### Cite
+If you are interested in this work, please cite it as follows:
+```bibtxt
+@INPROCEEDINGS{RegDA,
+  author={Liu, Wang and Duan, Puhong and Xie, Zhuojun and Kang, Xudong and Li, Shutao},
+  booktitle={IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium}, 
+  title={Learn from Segment Anything Model: Local Region Homogenizing for Cross-domain Remote Sensing Image Segmentation}, 
+  year={2024}
+}
 ```
