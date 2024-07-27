@@ -10,18 +10,9 @@ Remote Sensing Image Segmentation</h2>
 </h5>
 
 
----------------------
-
 <h5 align="left">This is the official implementation for 
-<a href="https://scholar.google.com/citations?user=LXlWdyQAAAAJ&hl=zh-CN">RegDA</a>. 
-There are some differences comparing with the published paper.</h5>
-
-- The denoising approach in this repository is re-weighting, while in the paper is voting;
-- A class-frequency threshold is utilized to guide the pseudo-label homogenizing. 
-For each local region, if the class with a larger frequency than this threshold, 
-it will be employed for homogenizing;
-- The LRH is also utilized in the aligning stage.
-
+<a href="https://scholar.google.com/citations?user=LXlWdyQAAAAJ&hl=zh-CN">RegDA</a>.
+  
 ---------------------
 
 <div align=center><img src="asserts/overview-regda.png"></div>
@@ -53,24 +44,30 @@ it will be employed for homogenizing;
 - reorganize the directory tree.
 #### 3. The prepared data is formatted as follows:
 "\
-./data\
-----&nbsp;IsprsDA\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;Potsdam\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;ann_dir\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;img_dir\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;reg_dir\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;Vaihingen\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;ann_dir\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;img_dir\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;reg_dir\
+-&nbsp;data\
+&nbsp;&nbsp;&nbsp;|---&nbsp;IsprsDA\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---Potsdam\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---&nbsp;ann_dir\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---&nbsp;img_dir\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---&nbsp;reg_dir\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---Vaihingen\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---&nbsp;ann_dir\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---&nbsp;img_dir\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---&nbsp;reg_dir\
 "
 
 ### Evaluate the trained RegDA models.\
 Download the pre-trained [<b>weights</b>](https://pan.baidu.com/s/1rWHSgRpSVPlLt5_bykHCOg?pwd=6th5) and logs.
 #### 1. on Vaihingen (IRRG) -> Potsdam (IRRG) task
-Run evaluating: `python tools/eval.py --config-path st.regda.2potsdam --ckpt-path log/regda/2potsdam/ssl/Potsdam_best.pth --test 1`
+Run evaluating: 
+```python
+python tools/eval.py --config-path st.regda.2potsdam --ckpt-path log/regda/2potsdam/ssl/Potsdam_best.pth --test 1
+```
 #### 2. on Potsdam (IRRG) -> Vaihingen (IRRG) task
-Run evaluating: `python tools/eval.py --config-path st.regda.2vaihingen --ckpt-path log/regda/2vaihingen/ssl/Vaihingen_best.pth --test 1`
+Run evaluating: 
+```python
+python tools/eval.py --config-path st.regda.2vaihingen --ckpt-path log/regda/2vaihingen/ssl/Vaihingen_best.pth --test 1
+```
 
 ### Train the RegDA
 ```bash 
@@ -95,3 +92,13 @@ If you are interested in this work, please cite it as follows:
   year={2024}
 }
 ```
+
+---------------------
+
+There are some differences compared with the published paper.</h5>
+
+- The denoising approach in this repository is re-weighting, while in the paper is voting;
+- A class-frequency threshold is utilized to guide the pseudo-label homogenizing. 
+For each local region, if the class with a larger frequency than this threshold, 
+it will be employed for homogenizing;
+- The LRH is also utilized in the aligning stage.
