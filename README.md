@@ -11,7 +11,7 @@ Remote Sensing Image Segmentation</h2>
 
 
 <h5 align="left">This is the official implementation for 
-<a href="https://scholar.google.com/citations?user=LXlWdyQAAAAJ&hl=zh-CN">RegDA</a>.
+<a href="https://ieeexplore.ieee.org/abstract/document/10642007">RegDA</a>.
   
 ---------------------
 
@@ -85,11 +85,13 @@ python tools/infer_single.py st.regda.2potsdam log/regda/ssl/Potsdam_best.pth [i
 ### Cite
 If you are interested in this work, please cite it as follows:
 ```bibtxt
-@INPROCEEDINGS{RegDA,
+@INPROCEEDINGS{10642007,
   author={Liu, Wang and Duan, Puhong and Xie, Zhuojun and Kang, Xudong and Li, Shutao},
   booktitle={IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium}, 
-  title={Learn from Segment Anything Model: Local Region Homogenizing for Cross-domain Remote Sensing Image Segmentation}, 
-  year={2024}
+  title={Learn From Segment Anything Model: Local Region Homogenizing for Cross-Domain Remote Sensing Image Segmentation}, 
+  year={2024},
+  pages={8351-8354},
+  doi={10.1109/IGARSS53475.2024.10642007}
 }
 ```
 
